@@ -1,0 +1,10 @@
+# Archivos y carpetas a ignorar por git
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env.*
+.DS_Store
+*.swp
+*.swo
