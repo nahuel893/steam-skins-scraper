@@ -2,17 +2,22 @@ import pandas as pd
 import os
 import json
 from typing import Any
+from src.datasources import SkinspockAPI
 
 class DataInventory:
     """
     Clase para transformar datos y exportarlos a diferentes formatos (por ejemplo, Excel).
     """
-    def __init__(self, data: list[str], bloat_columns: list[str]) -> None:
+    def __init__(self, steamid) -> None:
+        self.steamid = steamid
+        self.skinspock = SkinspockAPI(steamid)
+        self.data = self.skinspock.get_inventory()
+        self.bloat_columns = self.skinspock.get_bloat_columns()
+
         # Convert list to string and then to JSON, then to DataFrame
-        self.data = json.dumps(data)
+        self.data = json.dumps(self.data)
         self.data = json.loads(self.data)
         self.df = pd.DataFrame(self.data)
-        self.bloat_columns = bloat_columns
 
         self.price_date_name = "priceupdatedat"
 
@@ -47,4 +52,4 @@ class DataInventory:
         """
         Exporta los datos a un archivo Excel.
         """
-        self.df.to_excel("./data/skinspock.xlsx", index=False)  
+        self.df.to_excel(r"../data/skinspock.xlsx", index=False)  

@@ -1,5 +1,3 @@
-        
-from src.datasources import SkinspockAPI
 from src.data import DataInventory
 """
     TO-DO:
@@ -11,11 +9,9 @@ from src.data import DataInventory
 """
 
 steamid = "76561198102151621"
-skinspock = SkinspockAPI(steamid)
 
-data_inventory = DataInventory(skinspock.get_inventory(), skinspock.get_bloat_columns())
+data_inventory = DataInventory(steamid)
 data_inventory.transform_data()
-
 
 data_inventory.show_data()
 data_inventory.to_excel()

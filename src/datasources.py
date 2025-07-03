@@ -8,7 +8,7 @@ load_dotenv()
 # Define paths for the project
 """
     TO-DO:
-        * Quitar doble creacion de variables BASE_DIR, DATA_DIR y SRC_DIR\
+        * Quitar doble creacion de variables BASE_DIR, DATA_DIR y SRC_DIR
         * Quitar exportacion a excel, mover a otra clase
 """
 
@@ -30,12 +30,16 @@ class SkinspockAPI:
             params (dict): Parameters for the API request, including Steam ID, sorting options, game, and language.
             headers (dict): Headers for the API request, including Accept, User-Agent, Referer, Accept-Language, and API keys.
         """
-        with open(r"./data/apikey.txt", "r") as file:
-            self.apikey = file.read().strip()
-
+        
         self.BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         self.DATA_DIR = os.path.join(self.BASE_DIR, "data")
         self.SRC_DIR = os.path.join(self.BASE_DIR, "src")
+
+        # Load API key from a file
+        apikey_path = os.path.join(self.DATA_DIR, "apikey.txt")
+        with open(apikey_path, "r") as file:
+            self.apikey = file.read().strip()
+
         self.steamid = steamid
         self.__base_url_inventory = "https://www.skinpock.com/api/inventory"
         self.__session = requests.Session()
