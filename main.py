@@ -1,18 +1,21 @@
-
+        
 from src.datasources import SkinspockAPI
-
+from src.data import DataInventory
 """
     TO-DO:
-        * Inicializar el proyecto en git y subirlo a github
-        * Crear un README.md
-        * Agregar historial de precios en el tablero 
+        * Agregar historial de precios en el tablero
         * Agregar funcionalidad para obtener el inventario de N usuarios
         * Separar desgaste de los nombres
         * Quitar columnas innecesarias
         * 
 """
 
-steamid = "76561197961106934"
-
+steamid = "76561198102151621"
 skinspock = SkinspockAPI(steamid)
-skinspock.get_inventory(excel=True)
+
+data_inventory = DataInventory(skinspock.get_inventory(), skinspock.get_bloat_columns())
+data_inventory.transform_data()
+
+
+data_inventory.show_data()
+data_inventory.to_excel()

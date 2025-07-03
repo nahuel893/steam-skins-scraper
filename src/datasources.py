@@ -1,7 +1,7 @@
 import requests
-import pandas as pd
 import os
 from dotenv import load_dotenv  # type: ignore
+
 
 load_dotenv()
 
@@ -30,13 +30,31 @@ class SkinspockAPI:
             params (dict): Parameters for the API request, including Steam ID, sorting options, game, and language.
             headers (dict): Headers for the API request, including Accept, User-Agent, Referer, Accept-Language, and API keys.
         """
+        with open(r"./data/apikey.txt", "r") as file:
+            self.apikey = file.read().strip()
+
         self.BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         self.DATA_DIR = os.path.join(self.BASE_DIR, "data")
         self.SRC_DIR = os.path.join(self.BASE_DIR, "src")
         self.steamid = steamid
         self.__base_url_inventory = "https://www.skinpock.com/api/inventory"
         self.__session = requests.Session()
-    
+        self.data = None
+
+        self.bloat_columns = [
+            "markethashname",
+            "inspectlink",
+            # "pricelatestsell24h",
+            # "pricelatestsell7d",
+            # "pricelatestsell30d",
+            # "pricelatestsell90d",
+            # "pricereal",
+            # "pricereal24h",
+            # "pricereal7d",
+            # "pricereal30d",
+            # "pricereal90d"
+        ]
+
         self.params = {
             "steam_id": self.steamid,
             "sort":      "price_max",
@@ -50,16 +68,15 @@ class SkinspockAPI:
                             "Chrome/135.0.0.0 Safari/537.36",
             "Referer":         f"https://www.skinpock.com/es/inventory/{self.steamid}",
             "Accept-Language": "es-ES,es;q=0.9",
-            "Apikeys":         os.getenv("APIKEYS") # type: ignore
+            "Apikeys":  self.apikey
         } 
 
-    def get_inventory(self, steamid: str="", excel: bool=False):
+    def get_inventory(self, steamid: str = "") -> list[str]:
         """
         Returns a DataFrame containing the inventory of the specified Steam user.
         Args:
             steamid (str): The Steam ID of the user whose inventory will be accessed.
         Attributes:
-
         """
         if steamid != "":
             self.steamid = steamid
@@ -68,17 +85,16 @@ class SkinspockAPI:
         try:
             response = self.__session.get(self.__base_url_inventory, params=self.params, headers=self.headers)
             response.raise_for_status()  # Raise an error for bad responses
-            data = pd.DataFrame(response.json())
-            if excel: # this code is for testing purposes, probably will be removed in the future
-                print(self.DATA_DIR)
-                data.to_excel(os.path.join(self.DATA_DIR, "skinspock.xlsx"), index=False)
-            
-            print(data)
+            data = response.json()
             return data
+        
         except requests.exceptions.RequestException as e:
             print("Error:", e)
             return None
         
+
+    def get_bloat_columns(self) -> list[str]:
+        return self.bloat_columns
 
 
 class SkinSniperAPI:
@@ -127,8 +143,9 @@ class SkinSniperAPI:
             response = self.__session.get(self.__base_url, headers=self.headers)
             response.raise_for_status()  # Raise an error for bad responses
             data = response.json()
-            
-            return data
+            data = data.to_string()
+
+            return data.__str__()
         except requests.exceptions.RequestException as e:
             print("Error:", e)
             return None
@@ -138,9 +155,9 @@ if __name__ == "__main__":
     #Example usage
     steamid = "76561198102151621"
     api = SkinspockAPI(steamid)
-    inventory_data = api.get_inventory(excel=True)
-    print(inventory_data)
+    inventory_data = api.get_inventory()
+    #print(inventory_data)
 
-    sniper_api = SkinSniperAPI()
-    sniper_data = sniper_api.get_skin_prices(excel=True)
-    print(sniper_data)
+    # sniper_api = SkinSniperAPI()
+    # sniper_data = sniper_api.get_skin_prices(excel=True)
+    # print(sniper_data)
