@@ -1,8 +1,10 @@
 import requests
 import os
 from dotenv import load_dotenv  # type: ignore
+import json
 
-
+import re
+from urllib.parse import quote_plus
 load_dotenv()
 
 # Define paths for the project
@@ -131,6 +133,7 @@ class SkinSniperAPI:
             "availability": "",
             "primaryColor": ""
         }
+        
         self.headers = {
 
         }
@@ -155,7 +158,84 @@ class SkinSniperAPI:
             return None
 
 
-if __name__ == "__main__":
+class SteamAPIMarket:
+    """
+    Clase para recolectar datos de precios de skins de CS2 usando la API no oficial de Steam Market.
+    
+    """
+
+    def __init__(self, appid: int = 730, currency: int = 1, user_agent: str = None):
+        """
+        Inicializa el cliente con appid (por defecto 730 para CS:GO/CS2) y currency (1=USD).
+        Se puede especificar un User-Agent personalizado.
+        """
+        self.appid = appid
+        self.currency = currency
+        self.base_price_url = "https://steamcommunity.com/market/priceoverview/"
+        self.base_history_url = "https://steamcommunity.com/market/pricehistory/"
+        self.session = requests.Session()
+        ua = user_agent or 'Mozilla/5.0 (compatible; DataSteamMarket/1.0)'
+        self.session.headers.update({'User-Agent': ua})
+
+    def get_price_overview(self, market_hash_name: str) -> dict:
+        """
+        Obtiene el precio actual y volúmenes de un ítem.
+
+        :param market_hash_name: Nombre codificado del ítem, p.ej. "AK-47 | Redline (Field-Tested)"
+        :return: Diccionario con keys: success, lowest_price, median_price, volume
+        """
+        params = {
+            'appid': self.appid,
+            'currency': self.currency,
+            'market_hash_name': market_hash_name
+        }
+
+        resp = self.session.get(self.base_price_url, params=params)
+        
+        try:
+            data = resp.json()
+        except json.JSONDecodeError:
+            raise ValueError(f"Error al decodificar JSON para '{market_hash_name}': {resp.text}")
+        except ValueError:
+            raise ValueError(f"Respuesta inesperada al obtener precio overview para '{market_hash_name}': {resp.text}")
+        
+        if not data.get('success', False):
+            raise ValueError(f"Error al obtener precio overview para '{market_hash_name}'")
+        return data
+
+    def get_price_history(self, market_hash_name: str) -> list:
+        """
+        Obtiene el historial de precios de un ítem.
+
+        :param market_hash_name: Nombre codificado del ítem
+        :return: Lista de tuples (timestamp_ms, price_str)
+
+        Test URL:
+        https://steamcommunity.com/market/pricehistory/?appid=730&market_hash_name=AK-47%20|%20Redline%20(Field-Tested)
+        """
+        params = {
+            'appid': self.appid,
+            'market_hash_name': market_hash_name
+        }
+
+        # Generamos la request a la URL de historial de precios
+        resp = requests.get(self.base_history_url, params=params)
+
+        if resp.status_code != 200:
+            print(f"Error al obtener historial de precios para '{market_hash_name}': {resp.status_code}")
+        # Convertimos la respuesta a JSON
+        try:
+            json = resp.json()
+        except json.JSONDecodeError:
+            print(f"Error al decodificar JSON para '{market_hash_name}': {resp.text}")
+        
+        # Verificamos si la respuesta es exitosa
+        if json['success'] is not True:
+            print(f"Error al obtener historial de precios para '{market_hash_name}': {json.get('error', 'Unknown error')}")
+        
+        return json
+
+if __name__ == '__main__':
     #Example usage
     steamid = "76561198102151621"
     api = SkinspockAPI(steamid)
@@ -165,3 +245,14 @@ if __name__ == "__main__":
     # sniper_api = SkinSniperAPI()
     # sniper_data = sniper_api.get_skin_prices(excel=True)
     # print(sniper_data)
+
+    client = SteamAPIMarket(currency=1)
+    item = "AK-47 | Redline (Field-Tested)"
+    overview = client.get_price_overview(item)
+    print(f"Overview for {item}:")
+    print(f"Median price: {overview['median_price']}, Volume: {overview['volume']}")
+
+    #print(f"Median price: {overview['median_price']}, Volume: {overview['volume']}, Lowest price: {overview['lowest_price']}")
+
+    history = client.get_price_history(item)
+    print(f"Price history for {item}:", history['prices'])

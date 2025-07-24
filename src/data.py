@@ -1,12 +1,19 @@
+"""
+Module for managing and transforming data from the various Steam skin APIs...
+"""
+
+
 import pandas as pd
 import os
 import json
 from typing import Any
 from src.datasources import SkinspockAPI
 
+
+
 class DataInventory:
     """
-    Clase para transformar datos y exportarlos a diferentes formatos (por ejemplo, Excel).
+    Clase dedicada a la limpieza y transformacion de los datos obtenidos de las API de Skinspock.
     """
     def __init__(self, steamid) -> None:
         self.steamid = steamid
@@ -50,6 +57,8 @@ class DataInventory:
 
     def to_excel(self) -> None:
         """
-        Exporta los datos a un archivo Excel.
         """
-        self.df.to_excel(r"../data/skinspock.xlsx", index=False)  
+        self.df.to_excel(r"../data/skinspock.xlsx", index=False)
+
+
+
