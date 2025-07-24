@@ -160,14 +160,15 @@ class SkinSniperAPI:
 
 class SteamAPIMarket:
     """
-    Clase para recolectar datos de precios de skins de CS2 usando la API no oficial de Steam Market.
-    
+    Class for collecting CS2 skin price data using the public (unofficial) Steam Market API.
+    This class interacts with the same endpoints used by the Steam Market web interface,
+    not an official or documented Steam API.
     """
 
     def __init__(self, appid: int = 730, currency: int = 1, user_agent: str = None):
         """
-        Inicializa el cliente con appid (por defecto 730 para CS:GO/CS2) y currency (1=USD).
-        Se puede especificar un User-Agent personalizado.
+        Initializes the client with appid (default 730 for CS:GO/CS2) and currency (1=USD).
+        You can specify a custom User-Agent.
         """
         self.appid = appid
         self.currency = currency
@@ -179,10 +180,10 @@ class SteamAPIMarket:
 
     def get_price_overview(self, market_hash_name: str) -> dict:
         """
-        Obtiene el precio actual y volúmenes de un ítem.
+        Gets the current price and volume for an item.
 
-        :param market_hash_name: Nombre codificado del ítem, p.ej. "AK-47 | Redline (Field-Tested)"
-        :return: Diccionario con keys: success, lowest_price, median_price, volume
+        :param market_hash_name: Encoded item name, e.g. "AK-47 | Redline (Field-Tested)"
+        :return: Dictionary with keys: success, lowest_price, median_price, volume
         """
         params = {
             'appid': self.appid,
@@ -205,10 +206,10 @@ class SteamAPIMarket:
 
     def get_price_history(self, market_hash_name: str) -> list:
         """
-        Obtiene el historial de precios de un ítem.
+        Gets the price history for an item.
 
-        :param market_hash_name: Nombre codificado del ítem
-        :return: Lista de tuples (timestamp_ms, price_str)
+        :param market_hash_name: Encoded item name
+        :return: List of tuples (timestamp_ms, price_str)
 
         Test URL:
         https://steamcommunity.com/market/pricehistory/?appid=730&market_hash_name=AK-47%20|%20Redline%20(Field-Tested)
@@ -223,29 +224,29 @@ class SteamAPIMarket:
 
         if resp.status_code != 200:
             print(f"Error al obtener historial de precios para '{market_hash_name}': {resp.status_code}")
-        # Convertimos la respuesta a JSON
-        try:
-            json = resp.json()
-        except json.JSONDecodeError:
-            print(f"Error al decodificar JSON para '{market_hash_name}': {resp.text}")
+
+        else:
+            # Convertimos la respuesta a JSON
+            try:
+                json = resp.json()
+            except json.JSONDecodeError:
+                print(f"Error al decodificar JSON para '{market_hash_name}': {resp.text}")
         
         # Verificamos si la respuesta es exitosa
         if json['success'] is not True:
             print(f"Error al obtener historial de precios para '{market_hash_name}': {json.get('error', 'Unknown error')}")
+       
         
         return json
 
 if __name__ == '__main__':
-    #Example usage
+
+    # Usage of SkinspockAPI to get inventory data
     steamid = "76561198102151621"
     api = SkinspockAPI(steamid)
     inventory_data = api.get_inventory()
-    #print(inventory_data)
 
-    # sniper_api = SkinSniperAPI()
-    # sniper_data = sniper_api.get_skin_prices(excel=True)
-    # print(sniper_data)
-
+    # Usage of Steam Market API to get price overview and history
     client = SteamAPIMarket(currency=1)
     item = "AK-47 | Redline (Field-Tested)"
     overview = client.get_price_overview(item)
