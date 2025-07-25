@@ -4,7 +4,7 @@ from dotenv import load_dotenv  # type: ignore
 import json
 
 import re
-from urllib.parse import quote_plus
+from urllib.parse import quote
 load_dotenv()
 
 # Define paths for the project
@@ -174,6 +174,7 @@ class SteamAPIMarket:
         self.currency = currency
         self.base_price_url = "https://steamcommunity.com/market/priceoverview/"
         self.base_history_url = "https://steamcommunity.com/market/pricehistory/"
+        self.base_history_url_alt = "https://steamcommunity.com/market/listings/"
         self.session = requests.Session()
         ua = user_agent or 'Mozilla/5.0 (compatible; DataSteamMarket/1.0)'
         self.session.headers.update({'User-Agent': ua})
@@ -204,56 +205,71 @@ class SteamAPIMarket:
             raise ValueError(f"Error al obtener precio overview para '{market_hash_name}'")
         return data
 
-    def get_price_history(self, market_hash_name: str) -> list:
+    def get_price_history(self, market_hash_name: str):
         """
         Gets the price history for an item.
 
         :param market_hash_name: Encoded item name
-        :return: List of tuples (timestamp_ms, price_str)
+        :return: Json (timestamp_ms, price_str)
 
         Test URL:
         https://steamcommunity.com/market/pricehistory/?appid=730&market_hash_name=AK-47%20|%20Redline%20(Field-Tested)
+        gpt: https://steamcommunity.com/market/listings/730/AK-47%20%7C%20Redline%20%28Field-Tested%29
+        steam: https://steamcommunity.com/market/listings/730/AK-47+%7C+Redline+%28Field-Tested%29
         """
         params = {
             'appid': self.appid,
             'market_hash_name': market_hash_name
         }
-
+        print(params)
+        print("quote:" + f"{quote(params['market_hash_name'])}")
+        url = f"{self.base_history_url_alt}{self.appid}/{quote(params['market_hash_name'])}"
+        print("url: " + url)
         # Generamos la request a la URL de historial de precios
-        resp = requests.get(self.base_history_url, params=params)
+        resp = requests.get(url)
 
-        if resp.status_code != 200:
-            print(f"Error al obtener historial de precios para '{market_hash_name}': {resp.status_code}")
+        if resp.status_code == 200:
+            # DEBUG: Save HTML for inspection
+            # output_path = os.path.join("/run/media/nahuel/SSD WD GREEN/Proyectos/steam-skin-scraper/data/", f"{market_hash_name}_price_history.html")
+            # with open(output_path, "w", encoding="utf-8") as f:
+            #     f.write(resp.text)
 
+            # Find the JSON array in the HTML response
+            match = re.search(r'var line1=(\[.*?\]);', resp.text, re.S)
+            print(f"match: {match}")
+
+            # Convert matched JSON string to Python object
+            if match:
+
+                raw_json = match.group(1)  # Contenido del array
+                price_history = json.loads(raw_json)
+                print(f"Se encontraron {len(price_history)} puntos de historial")
+                print(price_history[:5])  # Muestra los primeros 5
+
+            else:
+                print("No se encontró el historial en el HTML")
+            return price_history
+        
         else:
-            # Convertimos la respuesta a JSON
-            try:
-                json = resp.json()
-            except json.JSONDecodeError:
-                print(f"Error al decodificar JSON para '{market_hash_name}': {resp.text}")
-        
-        # Verificamos si la respuesta es exitosa
-        if json['success'] is not True:
-            print(f"Error al obtener historial de precios para '{market_hash_name}': {json.get('error', 'Unknown error')}")
-       
-        
-        return json
+            print(f"Error al obtener historial de precios para '{market_hash_name}': {resp.status_code}")          
+            return None
+    
 
 if __name__ == '__main__':
-
     # Usage of SkinspockAPI to get inventory data
-    steamid = "76561198102151621"
-    api = SkinspockAPI(steamid)
-    inventory_data = api.get_inventory()
+    # steamid = "76561198102151621"
+    # api = SkinspockAPI(steamid)
+    # inventory_data = api.get_inventory()
 
     # Usage of Steam Market API to get price overview and history
     client = SteamAPIMarket(currency=1)
     item = "AK-47 | Redline (Field-Tested)"
+
     overview = client.get_price_overview(item)
     print(f"Overview for {item}:")
     print(f"Median price: {overview['median_price']}, Volume: {overview['volume']}")
-
-    #print(f"Median price: {overview['median_price']}, Volume: {overview['volume']}, Lowest price: {overview['lowest_price']}")
+    if 'lowest_price' in overview:
+        print(f"Lowest price: {overview['lowest_price']}")
 
     history = client.get_price_history(item)
-    print(f"Price history for {item}:", history['prices'])
+    print(history)
