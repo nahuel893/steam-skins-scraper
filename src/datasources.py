@@ -253,8 +253,56 @@ class SteamAPIMarket:
         else:
             print(f"Error al obtener historial de precios para '{market_hash_name}': {resp.status_code}")          
             return None
-    
+            
+    def __get_max_items(self) -> int:  
+        url = "https://steamcommunity.com/market/search/render/"    
+        params = {
+            "appid": 730,
+            "count": 100,   # máximo por request
+            "start": 0,
+            "norender": 1
+        }
+        resp = requests.get(url, params=params)
+        data = resp.json()
+        max = data.get("total_count", 0)
+        print(f"Total items to fetch: {max}")
+        
+        return max
 
+    def get_list_items(self):
+        url = "https://steamcommunity.com/market/search/render/"
+        start = 0
+        count = 100 # max per request 
+        all_items = []
+        max = self.__get_max_items()
+
+        while start < 500: 
+            params = {
+                "appid": 730,
+                "count": 100,   # máximo por request
+                "start": start,
+                "norender": 1
+            }
+
+            resp = requests.get(url, params=params)
+            data = resp.json()
+            if data:
+                print("DATA VARIABLE:")
+                print(data)
+                results = data.get("results", [])
+                
+                if not results:
+                    break
+
+            all_items.extend([item['hash_name'] for item in results])
+
+            if start >= max:
+                break
+
+            start += count
+
+        return all_items
+        
 if __name__ == '__main__':
     # Usage of SkinspockAPI to get inventory data
     # steamid = "76561198102151621"
@@ -263,13 +311,17 @@ if __name__ == '__main__':
 
     # Usage of Steam Market API to get price overview and history
     client = SteamAPIMarket(currency=1)
-    item = "AK-47 | Redline (Field-Tested)"
+    # item = "AK-47 | Redline (Field-Tested)"
 
-    overview = client.get_price_overview(item)
-    print(f"Overview for {item}:")
-    print(f"Median price: {overview['median_price']}, Volume: {overview['volume']}")
-    if 'lowest_price' in overview:
-        print(f"Lowest price: {overview['lowest_price']}")
+    # overview = client.get_price_overview(item)
+    # print(f"Overview for {item}:")
+    # print(f"Median price: {overview['median_price']}, Volume: {overview['volume']}")
+    # if 'lowest_price' in overview:
+    #     print(f"Lowest price: {overview['lowest_price']}")
 
-    history = client.get_price_history(item)
-    print(history)
+    # history = client.get_price_history(item)
+    # print(history)
+    items = client.get_list_items()
+
+    print(f"Total items found: {len(items)}")
+    print("Itemns 1000 en 1000", items[:1000])  # Print first 1000 items for brevity

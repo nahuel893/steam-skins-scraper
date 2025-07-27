@@ -8,7 +8,7 @@ import os
 import json
 from typing import Any
 from src.datasources import SkinspockAPI
-
+from src.datasources import SteamAPIMarket
 
 
 class DataInventory:
@@ -60,5 +60,21 @@ class DataInventory:
         """
         self.df.to_excel(r"../data/skinspock.xlsx", index=False)
 
+
+
+class DataPriceHistory:
+
+    def __init__(self, appid: int=730) -> None:
+        self.appid = appid
+        self.steam = SteamAPIMarket(appid)
+        
+    def get_price_history(self) -> Any:
+        pass
+
+    def transform_steam(self) -> Any:
+        """
+        Transforma el historial de precios obtenido de la API de Steam.
+        """
+        self.steam.get_price_history(self.appid)
 
 
