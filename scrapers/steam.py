@@ -1,7 +1,6 @@
 import requests
 from dotenv import load_dotenv  # type: ignore
 import json
-
 import re
 from urllib.parse import quote
 load_dotenv()
@@ -99,7 +98,7 @@ class SteamAPIMarket:
         else:
             print(f"Error al obtener historial de precios para '{market_hash_name}': {resp.status_code}")          
             return None
-            
+
     def __get_max_items(self) -> int:  
         url = "https://steamcommunity.com/market/search/render/"    
         params = {
