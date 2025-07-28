@@ -1,4 +1,4 @@
-from src.data import DataInventory
+from db.data import DataInventory
 """
     TO-DO:
         * Agregar historial de precios en el tablero
@@ -9,7 +9,6 @@ from src.data import DataInventory
 """
 
 steamid = "76561198102151621"
-
 data_inventory = DataInventory(steamid)
 data_inventory.transform_data()
 
