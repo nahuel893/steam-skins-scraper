@@ -1,4 +1,4 @@
-from db.data import DataInventory
+from db.database import DataInventory
 """
     TO-DO:
         * Agregar historial de precios en el tablero

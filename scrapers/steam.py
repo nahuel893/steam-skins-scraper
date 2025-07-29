@@ -99,49 +99,51 @@ class SteamAPIMarket:
             print(f"Error al obtener historial de precios para '{market_hash_name}': {resp.status_code}")          
             return None
 
-    def __get_max_items(self) -> int:  
+    def get_max_items(self) -> int:  
         url = "https://steamcommunity.com/market/search/render/"    
         params = {
             "appid": 730,
-            "count": 100,   # máximo por request
+            "count": 1,   # máximo por request
             "start": 0,
             "norender": 1
         }
+        m = None
         resp = requests.get(url, params=params)
-        data = resp.json()
-        max = data.get("total_count", 0)
-        print(f"Total items to fetch: {max}")
+        if resp.status_code == 200:
+            data = resp.json()
         
-        return max
+            m = data.get("total_count",  0)
+            print(f"Total items to fetch: {m}")
+        
+        return m
 
-    def get_list_items(self):
+    def get_list_items(self, start: int = 0) -> list:
         url = "https://steamcommunity.com/market/search/render/"
-        start = 0
+        start = start
         count = 100 # max per request 
         all_items = []
-        max = self.__get_max_items()
+        m = self.get_max_items()
 
-        while start < 500: 
+        while True: 
             params = {
                 "appid": 730,
-                "count": 100,   # máximo por request
+                "count": count,   # máximo por request
                 "start": start,
                 "norender": 1
             }
 
             resp = requests.get(url, params=params)
             data = resp.json()
+
             if data:
-                print("DATA VARIABLE:")
-                print(data)
+
                 results = data.get("results", [])
+                all_items.extend([item['hash_name'] for item in results])
                 
-                if not results:
+                if results == None or results == []:
                     break
 
-            all_items.extend([item['hash_name'] for item in results])
-
-            if start >= max:
+            if start >= m:
                 break
 
             start += count
@@ -151,17 +153,22 @@ class SteamAPIMarket:
 if __name__ == '__main__':
     # Usage of Steam Market API to get price overview and history
     client = SteamAPIMarket(currency=1)
-    # item = "AK-47 | Redline (Field-Tested)"
+    x = client.get_max_items()
 
+    # item = "AK-47 | Redline (Field-Tested)"
     # overview = client.get_price_overview(item)
     # print(f"Overview for {item}:")
     # print(f"Median price: {overview['median_price']}, Volume: {overview['volume']}")
     # if 'lowest_price' in overview:
     #     print(f"Lowest price: {overview['lowest_price']}")
-
     # history = client.get_price_history(item)
     # print(history)
-    items = client.get_list_items()
 
+    items = client.get_list_items()
+    
     print(f"Total items found: {len(items)}")
-    print("Itemns 1000 en 1000", items[:1000])  # Print first 1000 items for brevity
+    print("Primeros 1000 items", items[:1000])
+
+    with open("steam_market_items.json", "w", encoding="utf-8") as f:
+        json.dump(items, f, ensure_ascii=False, indent=2)
+    print("Solved in steam_market_items.json")
