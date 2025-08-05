@@ -8,7 +8,6 @@ from db.models import Base, Item, Price
 from sqlalchemy.exc import IntegrityError
 
 class DataBase:
-
     DATA_BASE = "sqlite:///database.db"
 
     def __init__(self, appid: int = 730) -> None:
@@ -71,6 +70,25 @@ class DataBase:
         self.session.commit()
 
         return price
+    
+    def get_item(self, hash_name: str) -> Item:
+        pass
+
+    def get_items(self) -> list[Item]:
+        """
+        Obtiene todos los items de la base de datos.
+        """
+        return self.session.query(Item).all()
+    
+    def bulk_insert_items(self, items: list[Item]) -> None:
+        """
+        Inserta múltiples items en la base de datos.
+        """
+        self.session.bulk_save_objects(items)
+        self.session.commit()
+
+    def bulk_insert_prices(self, prices: list[Price]) -> None:
+        pass
 
     def close(self) -> None:
         """
