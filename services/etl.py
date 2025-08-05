@@ -37,7 +37,7 @@ class ETLManager:
             tradable=item["tradable"]
         ) for item in new]
 
-        self.db.bulk_insert_items(steam_items)
+        self.db.bulk_insert_items(new_items)
         n = len(new_items)
         logger.info(f"Inserted {n} new items into the database.")
         return n
