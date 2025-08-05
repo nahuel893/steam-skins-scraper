@@ -1,104 +1,81 @@
 """
 Module for managing and transforming data from the various Steam skin APIs...
 """
-
 import pandas as pd
-import os
-import json
-from typing import Any
-from scrapers.skinspock import SkinspockAPI
-from scrapers.steam import SteamAPIMarket
-
-
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from db.models import Base
+from db.models import Base, Item, Price
+from sqlalchemy.exc import IntegrityError
 
+class DataBase:
 
-class DataInventory:
-    """
-    Clase dedicada a la limpieza y transformacion de los datos obtenidos de las API de Skinspock.
-    """
-    def __init__(self, steamid) -> None:
-        self.steamid = steamid
-        self.skinspock = SkinspockAPI(steamid)
-        self.data = self.skinspock.get_inventory()
-        self.bloat_columns = self.skinspock.get_bloat_columns()
+    DATA_BASE = "sqlite:///database.db"
 
-        # Convert list to string and then to JSON, then to DataFrame
-        self.data = json.dumps(self.data)
-        self.data = json.loads(self.data)
-        self.df = pd.DataFrame(self.data)
-
-        self.price_date_name = "priceupdatedat"
-
-    def export_to_excel(self, filepath: str = "data.xlsx") -> None:
-        """
-        Exporta los datos a un archivo Excel en la ruta especificada.
-        """
-        self.df.to_excel(filepath, index=False)
-
-
-    def delete_bloat_columns(self) -> None:
-        """
-        Elimina columnas innecesarias del DataFrame.
-        """
-        self.df.drop(columns=self.bloat_columns, inplace=True, errors='ignore')
-
-    def transform_data(self) -> None:
-        """
-        Realiza transformaciones adicionales en los datos.
-        """
-        self.delete_bloat_columns()
-        print(self.df[self.price_date_name])  # type: ignore
-
-    def show_data(self) -> None:
-        """
-        Muestra los datos en la consola.
-        """
-        print(self.df.head())
-        print(self.df.columns)
-
-    def to_excel(self) -> None:
-        """
-        """
-        self.df.to_excel(r"../data/skinspock.xlsx", index=False)
-
-
-
-class DataBaseHistoryPrice:
-    DATA_BASE = "sqlite:///steam.db"
-
-    def __init__(self, appid: int=730) -> None:
-        self.appid = appid
-        self.steam = SteamAPIMarket(appid)
-
+    def __init__(self, appid: int = 730) -> None:
         self.engine = create_engine(self.DATA_BASE, echo=True)
-        self.session = sessionmaker(autocommit=False, autoflush=False, bind=self.engine)
+        self.session_local = sessionmaker(
+            autocommit=False, autoflush=False, bind=self.engine)
+        self.session = None
     
     def init_db(self) -> None:
         """
         Inicializa la base de datos y crea las tablas si no existen.
         """
-        Base.metadata.create_all(self.engine)
+        Base.metadata.create_all(bind=self.engine)
+        self.session = self.session_local()
+
+    def add_item(self, hash_name: str, type_: str, classid: str, instanceid: str, imagehash: str, tradable: int, sell_price_text: str) -> None:
+        """
+        Agrega un skin a la base de datos.
+        """
+        item = Item(
+            hash_name=hash_name,
+            type_=type_,
+            classid=classid,
+            instanceid=instanceid,
+            imagehash=imagehash,
+            tradable=tradable,
+        )
+        self.session.add(item)
+
+        # Si encuentra un error de integridad, hace rollback y retorna el skin existente para evitar duplicados
+        # Esto es útil si el skin ya existe en la base de datos
+        try:
+            self.session.commit()
+            self.session.refresh(item)
+            return item
         
-    def get_session(self):
+        except IntegrityError: # Cuando intentas ingresar un repetido (id o hashname)
+            self.session.rollback()
+            return self.session.query(Item).filter_by(hash_name=hash_name).first()
+        
+    def delete_item(self, hash_name: str) -> None:
+        """       
+        Elimina un skin de la base de datos.
         """
-        Obtiene una sesión de la base de datos.
-        """
-        return self.session()
+
+        item = self.session.query(Item).filter_by(hash_name=hash_name).first()
+        if item:
+            self.session.delete(item)
+            self.session.commit()
+            return True
+        return False
     
-    def get_price_history(self) -> Any:
-
-        """ 
-        Obtiene el historial de precios de un item específico.
+    def add_price(self, item_id: int, market: str, price: float) -> None:
         """
-        self.steam.get_price_history(self.appid)
-        
-    def transform_steam(self) -> Any:
+        Agrega un precio a la base de datos.
         """
-        Transforma el historial de precios obtenido de la API de Steam.
+
+        self.session = price = Price(item_id=item_id, market=market, price=price)
+        self.session.add(price)
+        self.session.commit()
+
+        return price
+
+    def close(self) -> None:
         """
-        self.steam.get_price_history(self.appid)
+        Cierra la sesión de la base de datos.
+        """
 
-
+        if self.session:
+            self.session.close()
