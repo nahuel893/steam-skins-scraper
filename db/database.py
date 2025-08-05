@@ -65,7 +65,7 @@ class DataBase:
         Agrega un precio a la base de datos.
         """
 
-        self.session = price = Price(item_id=item_id, market=market, price=price)
+        price = Price(item_id=item_id, market=market, price=price)
         self.session.add(price)
         self.session.commit()
 
