@@ -62,8 +62,6 @@ class SteamAPIMarket:
 
         Test URL:
         https://steamcommunity.com/market/pricehistory/?appid=730&market_hash_name=AK-47%20|%20Redline%20(Field-Tested)
-        gpt: https://steamcommunity.com/market/listings/730/AK-47%20%7C%20Redline%20%28Field-Tested%29
-        steam: https://steamcommunity.com/market/listings/730/AK-47+%7C+Redline+%28Field-Tested%29
         """
         params = {
             'appid': self.appid,
@@ -124,7 +122,7 @@ class SteamAPIMarket:
         all_items = []
         m = self.get_max_items()
 
-        while True: 
+        while True:
             params = {
                 "appid": 730,
                 "count": count,   # máximo por request
@@ -136,12 +134,15 @@ class SteamAPIMarket:
             data = resp.json()
 
             if data:
-
+                # Obtenemos el array de json que contiene los items (de 100 en 100)
                 results = data.get("results", [])
-                all_items.extend([item['hash_name'] for item in results])
-                
+
                 if results == None or results == []:
+                    # Agregar log para revisar ultima salida
                     break
+
+                # Agregamos los 100 itemos a nuestra lista
+                all_items += results
 
             if start >= m:
                 break
