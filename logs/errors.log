@@ -1,0 +1,569 @@
+2025-08-05 14:31:10,396 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-05 14:35:10,570 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-05 14:35:55,377 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-05 14:36:40,940 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-05 14:36:40,941 - steam_scraper - ERROR - Response: null
+2025-08-05 14:37:23,756 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-05 14:37:23,757 - steam_scraper - ERROR - Response: null
+2025-08-05 14:46:01,785 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-05 14:46:01,785 - steam_scraper - ERROR - Response: null
+2025-08-05 14:46:51,633 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-05 14:46:51,634 - steam_scraper - ERROR - Response: null
+2025-08-05 15:07:38,140 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-05 15:07:38,140 - steam_scraper - ERROR - Response: null
+2025-08-05 15:18:28,511 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-05 15:18:28,511 - steam_scraper - ERROR - Response: null
+2025-08-05 15:18:49,059 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-05 15:18:49,059 - steam_scraper - ERROR - Response: null
+2025-08-05 15:20:02,330 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-05 15:20:02,330 - steam_scraper - ERROR - Response: null
+2025-08-05 15:20:02,643 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:20:19,198 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-05 15:20:19,199 - steam_scraper - ERROR - Response: null
+2025-08-05 15:20:19,504 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:20:33,144 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-05 15:20:33,145 - steam_scraper - ERROR - Response: null
+2025-08-05 15:20:33,480 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:20:33,480 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:37,745 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:37,745 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:38,049 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:38,049 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:38,360 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:38,361 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:38,666 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:38,667 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:39,223 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:39,223 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:39,529 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:39,529 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:39,829 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:39,829 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:40,145 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:40,145 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:40,451 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:40,451 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:40,888 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:40,889 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:41,209 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:41,210 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:41,535 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:41,535 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:41,846 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:41,846 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:42,149 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:42,150 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:42,455 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:42,456 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:42,758 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:42,758 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:43,073 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:43,073 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:43,381 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:43,382 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:43,680 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:43,680 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:44,002 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:44,002 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:44,306 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:44,306 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:44,615 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:44,616 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:44,924 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:44,924 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:45,227 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:45,227 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:45,531 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:45,532 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:45,832 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:45,832 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:46,139 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:46,139 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:46,434 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:46,435 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:46,782 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:46,783 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:47,090 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:47,090 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:47,408 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:47,408 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:47,709 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:47,709 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:48,015 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:48,016 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:48,325 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:48,325 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:48,653 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:48,653 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:49,002 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:49,002 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:49,301 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:49,302 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:49,609 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:49,609 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:49,916 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:49,916 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:50,235 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:50,235 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:50,553 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:50,554 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:50,864 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:50,864 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:51,169 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:51,169 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:51,578 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:51,578 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:51,876 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:51,876 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:52,184 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:52,184 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:52,501 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:52,501 - steam_scraper - ERROR - Response: null
+2025-08-05 15:26:52,813 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:26:52,814 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:50,193 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:50,193 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:50,532 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:50,532 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:50,846 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:50,847 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:51,163 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:51,164 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:51,469 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:51,469 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:51,790 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:51,790 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:52,088 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:52,089 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:52,420 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:52,420 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:52,754 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:52,754 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:53,060 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:53,060 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:53,366 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:53,367 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:53,669 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:53,669 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:53,982 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:53,982 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:54,293 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:54,293 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:54,592 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:54,593 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:54,897 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:54,897 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:55,236 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:55,236 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:55,546 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:55,546 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:55,850 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:55,851 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:56,260 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:56,260 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:56,578 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:56,578 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:56,880 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:56,880 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:57,176 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:57,176 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:57,482 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:57,483 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:57,787 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:57,787 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:58,095 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:58,095 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:58,430 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:58,431 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:58,734 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:58,734 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:59,034 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:59,034 - steam_scraper - ERROR - Response: null
+2025-08-05 15:35:59,331 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:35:59,332 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:20,980 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-05 15:38:20,980 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:21,285 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:21,285 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:47,500 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:47,500 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:47,800 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:47,800 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:48,100 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:48,100 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:48,407 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:48,408 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:48,708 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:48,708 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:49,037 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:49,037 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:49,374 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:49,374 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:49,691 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:49,691 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:50,033 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:50,033 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:50,402 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:50,402 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:50,711 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:50,711 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:51,020 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:51,021 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:51,352 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:51,353 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:51,652 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:51,652 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:51,962 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:51,962 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:52,260 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:52,261 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:52,567 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:52,567 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:52,878 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:52,878 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:53,185 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:53,185 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:53,491 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:53,492 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:53,792 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:53,792 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:54,106 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:54,106 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:54,414 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:54,415 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:54,730 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:54,730 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:55,043 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:55,043 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:55,408 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:55,408 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:55,710 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:55,710 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:56,072 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:56,073 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:56,378 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:56,378 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:56,677 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:56,677 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:56,975 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:56,976 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:57,276 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:57,277 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:57,588 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:57,588 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:57,931 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:57,931 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:58,240 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:58,241 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:58,537 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:58,538 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:58,865 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:58,865 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:59,182 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:59,182 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:59,493 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:59,494 - steam_scraper - ERROR - Response: null
+2025-08-05 15:38:59,792 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:38:59,792 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:00,112 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:00,112 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:00,422 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:00,422 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:00,727 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:00,728 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:01,029 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:01,029 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:01,345 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:01,345 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:01,653 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:01,653 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:01,967 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:01,968 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:02,299 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:02,299 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:02,600 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:02,600 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:02,916 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:02,916 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:03,213 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:03,213 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:03,535 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:03,535 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:03,849 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:03,849 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:04,236 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:04,236 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:04,563 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:04,564 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:04,915 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:04,916 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:05,215 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:05,215 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:05,530 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:05,530 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:05,853 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:05,854 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:06,171 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:06,171 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:06,506 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:06,506 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:06,802 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:06,802 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:07,104 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:07,105 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:07,423 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:07,423 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:07,733 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:07,733 - steam_scraper - ERROR - Response: null
+2025-08-05 15:39:08,049 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:39:08,049 - steam_scraper - ERROR - Response: null
+2025-08-05 15:40:51,411 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-05 15:40:51,412 - steam_scraper - ERROR - Response: null
+2025-08-05 15:40:51,822 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 15:40:51,823 - steam_scraper - ERROR - Response: null
+2025-08-05 16:35:39,810 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:35:39,810 - steam_scraper - ERROR - Response: null
+2025-08-05 16:35:40,122 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:35:40,123 - steam_scraper - ERROR - Response: null
+2025-08-05 16:36:48,654 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:36:48,654 - steam_scraper - ERROR - Response: null
+2025-08-05 16:36:48,963 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:36:48,963 - steam_scraper - ERROR - Response: null
+2025-08-05 16:36:49,283 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:36:49,284 - steam_scraper - ERROR - Response: null
+2025-08-05 16:36:49,602 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:36:49,602 - steam_scraper - ERROR - Response: null
+2025-08-05 16:36:49,911 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:36:49,911 - steam_scraper - ERROR - Response: null
+2025-08-05 16:36:50,226 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:36:50,227 - steam_scraper - ERROR - Response: null
+2025-08-05 16:36:50,562 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:36:50,563 - steam_scraper - ERROR - Response: null
+2025-08-05 16:36:50,860 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:36:50,860 - steam_scraper - ERROR - Response: null
+2025-08-05 16:36:51,172 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:36:51,172 - steam_scraper - ERROR - Response: null
+2025-08-05 16:36:51,488 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:36:51,488 - steam_scraper - ERROR - Response: null
+2025-08-05 16:36:51,826 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:36:51,827 - steam_scraper - ERROR - Response: null
+2025-08-05 16:36:52,141 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:36:52,141 - steam_scraper - ERROR - Response: null
+2025-08-05 16:36:52,457 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:36:52,457 - steam_scraper - ERROR - Response: null
+2025-08-05 16:36:52,828 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:36:52,828 - steam_scraper - ERROR - Response: null
+2025-08-05 16:36:53,149 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:36:53,150 - steam_scraper - ERROR - Response: null
+2025-08-05 16:36:53,463 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:36:53,463 - steam_scraper - ERROR - Response: null
+2025-08-05 16:36:53,776 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:36:53,776 - steam_scraper - ERROR - Response: null
+2025-08-05 16:36:54,105 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:36:54,105 - steam_scraper - ERROR - Response: null
+2025-08-05 16:36:54,418 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:36:54,419 - steam_scraper - ERROR - Response: null
+2025-08-05 16:36:54,718 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 16:36:54,718 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:10,542 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:10,542 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:10,872 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:10,872 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:11,271 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:11,271 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:11,576 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:11,577 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:11,983 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:11,984 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:12,287 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:12,287 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:12,593 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:12,593 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:12,906 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:12,906 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:13,205 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:13,206 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:13,509 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:13,509 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:13,810 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:13,810 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:14,191 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:14,191 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:14,541 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:14,542 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:14,857 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:14,857 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:15,242 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:15,242 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:15,569 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:15,569 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:15,914 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:15,914 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:16,219 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:16,220 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:16,530 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:16,530 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:16,931 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:16,931 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:17,560 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:17,561 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:18,048 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:18,048 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:18,358 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:18,359 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:18,682 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:18,683 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:18,981 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:18,981 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:19,435 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:19,435 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:19,742 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:19,742 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:20,050 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:20,051 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:20,355 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:20,355 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:20,669 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:20,669 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:21,063 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:21,063 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:21,424 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:21,424 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:21,724 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:21,725 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:22,095 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:22,096 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:22,445 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:22,446 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:22,749 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:22,749 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:23,162 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:23,162 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:23,519 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:23,519 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:23,828 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:23,829 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:24,144 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:24,144 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:24,466 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:24,466 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:24,795 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:24,795 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:25,109 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:25,110 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:25,417 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:25,417 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:25,724 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:25,724 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:26,114 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:26,114 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:26,621 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:26,621 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:26,945 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:26,945 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:27,267 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:27,268 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:27,610 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:27,611 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:27,909 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:27,909 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:28,219 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:28,219 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:28,529 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:28,530 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:28,986 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:28,987 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:29,309 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:29,310 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:29,619 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:29,619 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:29,926 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:29,926 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:30,262 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:30,263 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:30,694 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:30,695 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:30,992 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:30,992 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:31,301 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:31,301 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:31,606 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:31,606 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:31,909 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:31,910 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:32,220 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:32,220 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:32,567 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:32,567 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:32,869 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:32,869 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:33,194 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:33,195 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:33,512 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:33,513 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:33,818 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:33,818 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:34,127 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:34,127 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:34,525 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:34,526 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:34,837 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:34,837 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:35,147 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:35,147 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:35,447 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:35,447 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:35,798 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:35,798 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:36,097 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:36,097 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:36,406 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:36,406 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:36,707 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:36,707 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:37,011 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:37,012 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:37,333 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:37,333 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:37,701 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:37,701 - steam_scraper - ERROR - Response: null
+2025-08-05 17:07:38,008 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:07:38,008 - steam_scraper - ERROR - Response: null
+2025-08-05 17:27:35,314 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:27:35,315 - steam_scraper - ERROR - Response: null
+2025-08-05 17:27:35,633 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:27:35,633 - steam_scraper - ERROR - Response: null
+2025-08-05 17:27:35,964 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:27:35,964 - steam_scraper - ERROR - Response: null
+2025-08-05 17:27:36,294 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:27:36,294 - steam_scraper - ERROR - Response: null
+2025-08-05 17:27:36,606 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:27:36,607 - steam_scraper - ERROR - Response: null
+2025-08-05 17:27:36,914 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:27:36,915 - steam_scraper - ERROR - Response: null
+2025-08-05 17:33:33,032 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:33:33,032 - steam_scraper - ERROR - Response: null
+2025-08-05 17:33:33,347 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:33:33,347 - steam_scraper - ERROR - Response: null
+2025-08-05 17:33:33,651 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:33:33,652 - steam_scraper - ERROR - Response: null
+2025-08-05 17:33:33,951 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:33:33,951 - steam_scraper - ERROR - Response: null
+2025-08-05 17:33:34,273 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:33:34,273 - steam_scraper - ERROR - Response: null
+2025-08-05 17:33:34,573 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:33:34,574 - steam_scraper - ERROR - Response: null
+2025-08-05 17:33:34,879 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:33:34,879 - steam_scraper - ERROR - Response: null
+2025-08-05 17:33:35,197 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:33:35,197 - steam_scraper - ERROR - Response: null
+2025-08-05 17:33:35,517 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:33:35,517 - steam_scraper - ERROR - Response: null
+2025-08-05 17:33:35,819 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:33:35,820 - steam_scraper - ERROR - Response: null
+2025-08-05 17:33:36,124 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:33:36,124 - steam_scraper - ERROR - Response: null
+2025-08-05 17:33:36,425 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:33:36,425 - steam_scraper - ERROR - Response: null
+2025-08-05 17:33:36,748 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
+2025-08-05 17:33:36,748 - steam_scraper - ERROR - Response: null

@@ -18,25 +18,21 @@ class ETLManager:
         pass
 
     def insert_items(self):
-        # First obtain items in db 
-        current_items = self.db.get_items()
-        current_items = [item.hash_name for item in current_items]
-
+        # Obtain items in db 
+        current_items = [item.hash_name for item in self.db.get_items()]
+        # Obtain items from Steam API
         steam_items = self.steam_scraper.get_list_items()
-
         # Filter new items that are not in the current items
-        new  = [item for item in steam_items if item["hash_name"] not in current_items]
-
+        new = [item for item in steam_items if item["hash_name"] not in current_items]
         # Convert new items to Item model
         new_items = [Item(
             hash_name=item["hash_name"],
-            type_=item["type_"],
-            classid=item["classid"],
-            instanceid=item["instanceid"],
-            imagehash=item["imagehash"],
-            tradable=item["tradable"]
+            type_=item["asset_description"]["type"],
+            classid=item["asset_description"]["classid"],
+            instanceid=item["asset_description"]["instanceid"],
+            imagehash=item["asset_description"]["icon_url"],
+            tradable=item["asset_description"]["tradable"]
         ) for item in new]
-
         self.db.bulk_insert_items(new_items)
         n = len(new_items)
         logger.info(f"Inserted {n} new items into the database.")

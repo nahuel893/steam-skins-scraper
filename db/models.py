@@ -15,7 +15,7 @@ class Item(Base):
 
     # "asset_description"
     type_ = Column(String)  # Ej: "Classified Rifle"
-    classid = Column(String)  # IDs de Steam
+    classid = Column(String)  
     instanceid = Column(String)
     imagehash = Column(String)  # Hash of image
     tradable = Column(Integer)  # 1 si es comerciable, 0 si no

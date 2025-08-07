@@ -1,16 +1,24 @@
-from db.database import DataInventory
-"""
-    TO-DO:
-        * Agregar historial de precios en el tablero
-        * Agregar funcionalidad para obtener el inventario de N usuarios
-        * Separar desgaste de los nombres
-        * Quitar columnas innecesarias
-        * 
-"""
+from db.database import DataBase
+from core.loggin_config import logger
+from services.etl import ETLManager
 
-steamid = "76561198102151621"
-data_inventory = DataInventory(steamid)
-data_inventory.transform_data()
+# steamid = "76561198102151621"
+# data_inventory = DataInventory(steamid)
+# data_inventory.transform_data()
 
-data_inventory.show_data()
-data_inventory.to_excel()
+# data_inventory.show_data()
+# data_inventory.to_excel()
+
+logger.info("Starting the database initialization...")
+
+db = DataBase()
+db.init_db()
+logger.info("Database initialized successfully.")
+
+etl = ETLManager(db)
+etl.insert_items()
+
+logger.info("ETL process completed successfully. All new items have been inserted into the database.")
+
+db.close()
+logger.info("Database connection closed.")
