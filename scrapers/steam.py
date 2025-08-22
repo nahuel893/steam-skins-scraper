@@ -2,10 +2,17 @@ import requests
 import json
 import re
 import time
+import sys
+import os
+import random
 from typing import Optional, Dict, Any, List
 from urllib.parse import quote
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
+
+# Add parent directory to path to import core modules
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from core.loggin_config import logger
 from core.config import config
 from core.rate_limiter import RateLimiter
@@ -18,7 +25,7 @@ class SteamAPIMarket:
     not an official or documented Steam API.
     """
 
-    def __init__(self, appid: int = None, currency: int = None, user_agent: str = ""):
+    def __init__(self, appid: int = 730, currency: int = 0, user_agent: str = ""):
         """
         Initializes the client with configuration from centralized config.
         """
@@ -29,7 +36,7 @@ class SteamAPIMarket:
         self.base_history_url = f"{steam_config['base_url']}/market/pricehistory/"
         self.base_history_url_alt = f"{steam_config['base_url']}/market/listings/"
         
-        # Setup session with retry strategy
+        # Setup session requests with retry strategy
         self.session = self._create_session(user_agent or steam_config["user_agent"])
         
         # Initialize rate limiter
@@ -37,34 +44,44 @@ class SteamAPIMarket:
         
     def _create_session(self, user_agent: str) -> requests.Session:
         """
-        Crea una sesión con retry strategy y timeouts configurados.
+        Crea una sesión con retry strategy, timeouts y cookies realistas.
         
         Fundamento Teórico:
         - Retry Strategy: Reintenta automáticamente en fallos temporales
         - Circuit Breaker: Evita requests a servicios que fallan consistentemente
         - Connection Pooling: Reutiliza conexiones TCP para mejor rendimiento
+        - Session Persistence: Mantiene estado como navegador real
         """
         session = requests.Session()
         
-        # Configurar retry strategy
+        # Configurar retry strategy más conservadora
         retry_strategy = Retry(
-            total=3,
-            backoff_factor=1,
-            status_forcelist=[429, 500, 502, 503, 504],
-            method_whitelist=["HEAD", "GET", "OPTIONS"]
+            total=2,  # Menos reintentos automáticos, manejamos manualmente
+            backoff_factor=2,
+            status_forcelist=[500, 502, 503, 504],  # Excluimos 429 para manejo manual
+            allowed_methods=["HEAD", "GET", "OPTIONS"]
         )
         
         adapter = HTTPAdapter(max_retries=retry_strategy)
         session.mount("http://", adapter)
         session.mount("https://", adapter)
         
-        # Headers
+        # Headers iniciales básicos (se actualizarán dinámicamente)
         session.headers.update({
             'User-Agent': user_agent,
             'Accept': 'application/json, text/html, */*',
             'Accept-Language': 'en-US,en;q=0.9',
             'Accept-Encoding': 'gzip, deflate, br',
             'Connection': 'keep-alive',
+        })
+        
+        # Simular cookies de sesión realistas
+        session.cookies.update({
+            'browserid': f"{random.randint(1000000000000000000, 9999999999999999999)}",
+            'sessionid': f"steam_session_{random.randint(100000, 999999)}",
+            'steamMachineAuth': f"auth_{random.randint(1000000, 9999999)}",
+            'Steam_Language': 'english',
+            'timezoneOffset': '0,0'
         })
         
         # Timeout por defecto
@@ -112,19 +129,11 @@ class SteamAPIMarket:
             'appid': self.appid,
             'market_hash_name': market_hash_name
         }
-        print(params)
-        print("quote:" + f"{quote(params['market_hash_name'])}")
         url = f"{self.base_history_url_alt}{self.appid}/{quote(params['market_hash_name'])}"
-        print("url: " + url)
         # Generamos la request a la URL de historial de precios
         resp = requests.get(url)
 
         if resp.status_code == 200:
-            # DEBUG: Save HTML for inspection
-            # output_path = os.path.join("/run/media/nahuel/SSD WD GREEN/Proyectos/steam-skin-scraper/data/", f"{market_hash_name}_price_history.html")
-            # with open(output_path, "w", encoding="utf-8") as f:
-            #     f.write(resp.text)
-            # Find the JSON array in the HTML response
             match = re.search(r'var line1=(\[.*?\]);', resp.text, re.S)
             print(f"match: {match}")
 
@@ -143,63 +152,98 @@ class SteamAPIMarket:
             return None
 
     def get_max_items(self) -> int:  
+        """
+        Obtiene el número total de items disponibles usando el rate limiter mejorado.
+        """
         url = "https://steamcommunity.com/market/search/render/"    
         params = {
             "appid": 730,
             "count": 1,
             "start": 0,
             "norender": 1,
-            "query": "USP-S |"
+            "query": ""
         }
-        m = None
-        resp = requests.get(url, params=params)
-        if resp.status_code == 200:
-            data = resp.json()
         
-            m = data.get("total_count",  0)
-            print(f"Total items to fetch: {m}")
-        else:
-            logger.error(f"Error al obtener el número máximo de items: {resp.status_code}")
-            logger.error(f"Response: {resp.text}")
-            m = 0
-        return m
+        # Usar el método con rate limiting
+        response = self._make_request_with_rate_limit(url, params)
+        
+        if not response:
+            logger.error("No se pudo obtener el total de items disponibles")
+            return 0
+            
+        try:
+            data = response.json()
+            total_count = data.get("total_count", 0)
+            logger.info(f"Total items disponibles en Steam Market: {total_count}")
+            return total_count
+        except json.JSONDecodeError as e:
+            logger.error(f"Error decodificando JSON: {e}")
+            return 0
     
-    def _make_request_with_rate_limit(self, url: str, params: dict = None) -> Optional[requests.Response]:
+    def _make_request_with_rate_limit(self, url: str, params: dict = {}) -> Optional[requests.Response]:
         """
-        Hace un request respetando rate limits y manejando errores robustamente.
+        Hace un request respetando rate limits con headers realistas y manejo avanzado.
         
         Fundamento Teórico:
         - Rate Limiting: Previene ser bloqueado por APIs
         - Exponential Backoff: Reduce carga en servicios bajo estrés  
         - Circuit Breaker: Evita requests a servicios caídos
+        - Header Rotation: Simula comportamiento humano variable
         """
+        
         attempt = 0
         while attempt <= self.rate_limiter.max_retries:
             try:
                 # Verificar rate limit antes del request
                 self.rate_limiter.wait_if_needed()
                 
-                logger.debug(f"Request attempt {attempt + 1} to {url}")
-                response = self.session.get(url, params=params)
+                # Actualizar headers realistas para cada request
+                realistic_headers = self.rate_limiter.get_realistic_headers()
+                self.session.headers.update(realistic_headers)
                 
-                # Verificar status code
+                logger.debug(f"Request attempt {attempt + 1} to {url}")
+                logger.debug(f"Using User-Agent: {realistic_headers.get('User-Agent', 'N/A')[:50]}...")
+                
+                # Medir tiempo de respuesta
+                start_time = time.time()
+                response = self.session.get(url, params=params)
+                response_time = time.time() - start_time
+                
+                # Verificar status code y registrar con metadata completa
                 if response.status_code == 200:
-                    self.rate_limiter.record_request(success=True)
+                    self.rate_limiter.record_request(
+                        success=True, 
+                        response_time=response_time, 
+                        status_code=200
+                    )
+                    logger.debug(f"Request exitoso en {response_time:.2f}s")
                     return response
                 elif response.status_code == 429:  # Rate limited
                     logger.warning(f"Rate limited by Steam (429). Attempt {attempt + 1}")
-                    self.rate_limiter.record_request(success=False)
+                    self.rate_limiter.record_request(
+                        success=False, 
+                        response_time=response_time, 
+                        status_code=429
+                    )
                 elif response.status_code in [500, 502, 503, 504]:  # Server errors
                     logger.warning(f"Server error {response.status_code}. Attempt {attempt + 1}")
-                    self.rate_limiter.record_request(success=False)
+                    self.rate_limiter.record_request(
+                        success=False, 
+                        response_time=response_time, 
+                        status_code=response.status_code
+                    )
                 else:
-                    logger.error(f"Unexpected status code {response.status_code}: {response.text}")
-                    self.rate_limiter.record_request(success=False)
+                    logger.error(f"Unexpected status code {response.status_code}: {response.text[:200]}")
+                    self.rate_limiter.record_request(
+                        success=False, 
+                        response_time=response_time, 
+                        status_code=response.status_code
+                    )
                     return None
                     
             except requests.exceptions.RequestException as e:
                 logger.error(f"Request exception on attempt {attempt + 1}: {e}")
-                self.rate_limiter.record_request(success=False)
+                self.rate_limiter.record_request(success=False, status_code=None)
             
             attempt += 1
             if attempt <= self.rate_limiter.max_retries:
@@ -210,7 +254,7 @@ class SteamAPIMarket:
         logger.error(f"Failed to get response after {self.rate_limiter.max_retries} attempts")
         return None
 
-    def get_list_items(self, start: int = 0, query: str = "USP-S |") -> List[Dict[str, Any]]:
+    def get_list_items(self, start: int = 0, query: str = "") -> List[Dict[str, Any]]:
         """
         Gets a list of items from the Steam Market API with robust error handling.
         
@@ -219,7 +263,7 @@ class SteamAPIMarket:
         - Rate Limiting: Respeta límites de API para evitar bloqueos
         - Resilencia: Maneja fallos temporales y recupera automáticamente
         """
-        url = f"{config.steam_config['base_url']}/market/search/render/"
+        url = f"{config.steam_config['list_url']}"
         count = config.rate_limit_config.get("batch_size", 10)
         all_items = []
         
@@ -249,7 +293,7 @@ class SteamAPIMarket:
             if not response:
                 logger.error(f"No se pudo obtener respuesta para start={current_start}")
                 break
-                
+
             try:
                 data = response.json()
             except json.JSONDecodeError as e:
@@ -268,11 +312,23 @@ class SteamAPIMarket:
             all_items.extend(results)
             current_start += count
             
-            # Status del rate limiter
-            status = self.rate_limiter.get_status()
-            logger.debug(f"Rate limiter status: {status}")
+            # Status detallado del rate limiter cada ciertos requests
+            if current_start % (count * 5) == 0:  # Cada 5 batches
+                status = self.rate_limiter.get_status()
+                logger.info(f"Rate limiter status - Success rate: {status['recent_success_rate']:.1f}%, "
+                          f"Avg response time: {status['avg_response_time']:.2f}s, "
+                          f"Degraded: {status['degraded_service']}")
+                
+                if status['performance_degraded']:
+                    logger.warning("Performance degradada detectada. Considerando pausas más largas.")
 
         logger.info(f"Scraping completado. Items obtenidos: {len(all_items)}")
+        
+        # Status final
+        final_status = self.rate_limiter.get_status()
+        logger.info(f"Estadísticas finales - Duración sesión: {final_status['session_duration']:.0f}s, "
+                   f"Success rate: {final_status['recent_success_rate']:.1f}%")
+        
         return all_items
         
 if __name__ == '__main__':
@@ -282,13 +338,5 @@ if __name__ == '__main__':
     import pandas as pd
     df = pd.DataFrame(client.get_list_items())
     df.to_csv("steam_market_items.csv", index=False)
-    # item = "AK-47 | Redline (Field-Tested)"
-    # overview = client.get_price_overview(item)
-    # print(f"Overview for {item}:")
-    # print(f"Median price: {overview['median_price']}, Volume: {overview['volume']}")
-    # if 'lowest_price' in overview:
-    #     print(f"Lowest price: {overview['lowest_price']}")
-    # history = client.get_price_history(item)
-    # print(history)
 
 

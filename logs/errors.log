@@ -567,3 +567,53 @@
 2025-08-05 17:33:36,425 - steam_scraper - ERROR - Response: null
 2025-08-05 17:33:36,748 - steam_scraper - ERROR - Error fetching items from Steam Market API: 429
 2025-08-05 17:33:36,748 - steam_scraper - ERROR - Response: null
+2025-08-10 09:21:07,838 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-10 09:21:07,840 - steam_scraper - ERROR - Response: null
+2025-08-10 09:21:07,840 - steam_scraper - ERROR - No se pudo obtener el total de items disponibles
+2025-08-10 09:24:59,186 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-10 09:24:59,187 - steam_scraper - ERROR - Response: null
+2025-08-10 09:24:59,187 - steam_scraper - ERROR - No se pudo obtener el total de items disponibles
+2025-08-10 09:25:33,465 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-10 09:25:33,466 - steam_scraper - ERROR - Response: null
+2025-08-10 09:25:33,466 - steam_scraper - ERROR - No se pudo obtener el total de items disponibles
+2025-08-12 11:42:37,366 - steam_scraper - ERROR - Request exception on attempt 1: HTTPSConnectionPool(host='steamcommunity.com', port=443): Max retries exceeded with url: /market/search/render/?appid=730&count=10&start=60&norender=1&query=USP-S+%7C (Caused by ResponseError('too many 429 error responses'))
+2025-08-12 11:42:46,512 - steam_scraper - ERROR - Request exception on attempt 2: HTTPSConnectionPool(host='steamcommunity.com', port=443): Max retries exceeded with url: /market/search/render/?appid=730&count=10&start=60&norender=1&query=USP-S+%7C (Caused by ResponseError('too many 429 error responses'))
+2025-08-12 11:42:57,874 - steam_scraper - ERROR - Request exception on attempt 3: HTTPSConnectionPool(host='steamcommunity.com', port=443): Max retries exceeded with url: /market/search/render/?appid=730&count=10&start=60&norender=1&query=USP-S+%7C (Caused by ResponseError('too many 429 error responses'))
+2025-08-12 11:43:13,366 - steam_scraper - ERROR - Request exception on attempt 4: HTTPSConnectionPool(host='steamcommunity.com', port=443): Max retries exceeded with url: /market/search/render/?appid=730&count=10&start=60&norender=1&query=USP-S+%7C (Caused by ResponseError('too many 429 error responses'))
+2025-08-12 11:43:13,367 - steam_scraper - ERROR - Failed to get response after 3 attempts
+2025-08-12 11:43:13,367 - steam_scraper - ERROR - No se pudo obtener respuesta para start=60
+2025-08-14 20:18:43,211 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-14 20:18:43,214 - steam_scraper - ERROR - Response: null
+2025-08-14 20:18:43,214 - steam_scraper - ERROR - No se pudo obtener el total de items disponibles
+2025-08-14 20:19:08,734 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-14 20:19:08,734 - steam_scraper - ERROR - Response: null
+2025-08-14 20:19:08,734 - steam_scraper - ERROR - No se pudo obtener el total de items disponibles
+2025-08-15 10:43:14,205 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-15 10:43:14,205 - steam_scraper - ERROR - Response: null
+2025-08-15 10:43:14,206 - steam_scraper - ERROR - No se pudo obtener el total de items disponibles
+2025-08-15 10:46:20,134 - steam_scraper - ERROR - Error decodificando JSON: Expecting value: line 1 column 1 (char 0)
+2025-08-15 11:04:10,341 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-15 11:04:10,342 - steam_scraper - ERROR - Response: null
+2025-08-15 11:04:10,342 - steam_scraper - ERROR - No se pudo obtener el total de items disponibles
+2025-08-15 11:04:53,593 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-15 11:04:53,593 - steam_scraper - ERROR - Response: null
+2025-08-15 11:04:53,594 - steam_scraper - ERROR - No se pudo obtener el total de items disponibles
+2025-08-15 11:16:50,389 - steam_scraper - ERROR - Error decodificando JSON: Expecting value: line 1 column 1 (char 0)
+2025-08-21 20:17:26,810 - steam_scraper - ERROR - Error al obtener el número máximo de items: 429
+2025-08-21 20:17:26,812 - steam_scraper - ERROR - Response: null
+2025-08-21 20:17:26,812 - steam_scraper - ERROR - No se pudo obtener el total de items disponibles
+2025-08-21 20:23:38,080 - steam_scraper - ERROR - Error decodificando JSON: Expecting value: line 1 column 1 (char 0)
+2025-08-21 20:30:04,985 - steam_scraper - ERROR - Error decodificando JSON: Expecting value: line 1 column 1 (char 0)
+2025-08-21 20:47:59,578 - steam_scraper - ERROR - Request exception on attempt 1: HTTPSConnectionPool(host='steamcommunity.com', port=443): Max retries exceeded with url: /market/search/render/?appid=730&count=10&start=240&norender=1&query= (Caused by ResponseError('too many 429 error responses'))
+2025-08-21 20:48:12,532 - steam_scraper - ERROR - Request exception on attempt 2: HTTPSConnectionPool(host='steamcommunity.com', port=443): Max retries exceeded with url: /market/search/render/?appid=730&count=10&start=240&norender=1&query= (Caused by ResponseError('too many 429 error responses'))
+2025-08-21 20:48:12,532 - steam_scraper - ERROR - Failed to get response after 1 attempts
+2025-08-21 20:48:12,533 - steam_scraper - ERROR - No se pudo obtener respuesta para start=240
+2025-08-21 23:21:04,758 - steam_scraper - ERROR - Request exception on attempt 1: HTTPSConnectionPool(host='steamcommunity.com', port=443): Max retries exceeded with url: /market/search/render/?appid=730&count=1&start=0&norender=1&query= (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fc819398cd0>, 'Connection to steamcommunity.com timed out. (connect timeout=None)'))
+2025-08-21 23:28:21,664 - steam_scraper - ERROR - Request exception on attempt 2: HTTPSConnectionPool(host='steamcommunity.com', port=443): Max retries exceeded with url: /market/search/render/?appid=730&count=1&start=0&norender=1&query= (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fc819399450>, 'Connection to steamcommunity.com timed out. (connect timeout=None)'))
+2025-08-21 23:36:10,998 - steam_scraper - ERROR - Request exception on attempt 3: HTTPSConnectionPool(host='steamcommunity.com', port=443): Max retries exceeded with url: /market/search/render/?appid=730&count=1&start=0&norender=1&query= (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fc819399bd0>, 'Connection to steamcommunity.com timed out. (connect timeout=None)'))
+2025-08-22 16:36:52,976 - steam_scraper - ERROR - Rate limited (429). Fallos consecutivos: 1
+2025-08-22 16:37:58,381 - steam_scraper - ERROR - Rate limited (429). Fallos consecutivos: 2
+2025-08-22 16:40:21,062 - steam_scraper - ERROR - Rate limited (429). Fallos consecutivos: 3
+2025-08-22 16:44:58,906 - steam_scraper - ERROR - Rate limited (429). Fallos consecutivos: 4
+2025-08-22 16:44:58,906 - steam_scraper - ERROR - Failed to get response after 3 attempts
+2025-08-22 16:44:58,906 - steam_scraper - ERROR - No se pudo obtener respuesta para start=110
